@@ -194,7 +194,7 @@ In another new terminal:
 
 ```bash
 cd app
-streamlit run frontend.py
+python -m streamlit run frontend.py
 ```
 🔗 Visit: http://localhost:8501
 
