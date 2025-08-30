@@ -242,6 +242,7 @@ Stores them in ChromaDB with role-based metadata
 ---
 
 ## 📝 License
-This project is for internal use at **FinSolve Technologies**.  
-All source code, models, and documentation are proprietary and confidential.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
