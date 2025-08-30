@@ -83,7 +83,6 @@ Key features:
 
 ## 🚀 Project Architecture
 
-```mermaid
 flowchart TD
     subgraph Frontend
         ST[Streamlit UI<br><b>frontend.py</b>]
@@ -112,6 +111,7 @@ flowchart TD
     Files --> CH
     LLM --> API
     API --> ST
+
 
 ## 📁 Project Structure
 
