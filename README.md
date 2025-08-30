@@ -1,22 +1,23 @@
-# 🤖 FinSolve Role-Based Chatbot
+# 🤖 Role-Based AI Chatbot
 
-A secure, intelligent chatbot powered by **LLMs + Vector Search (RAG)** — with **role-based access control (RBAC)** for Finance, HR, Engineering, Marketing, Employees, and C-Level Executives.
+A secure, intelligent chatbot powered by **LLMs + Vector Search (RAG)** — with **role-based access control (RBAC)** for Finance, HR, Engineering, Marketing, and Employees.
 
 ---
 
 ## 🧩 Problem Background
 
-**FinSolve Technologies**,  a leading FinTech company, was experiencing communication delays and fragmented document access across teams like Finance, HR, Marketing, Engineering, and C-Level Executives. These issues led to slower decision-making and operational inefficiencies, as teams lacked a centralized, secure way to access internal knowledge specific to their roles.
+Organizations often face communication delays and fragmented document access across teams like Finance, HR, Marketing, and Engineering. These issues slow down decision-making and operations due to the lack of a centralized, secure way to access internal knowledge specific to each role.
 
 ---
 
 ## 🧠 Solution Overview
-To address this issue, an internal AI chatbot was developed using Retrieval Augmented Generation (RAG) and Role-Based Access Control (RBAC). It ensures that every user receives accurate, secure, and role-relevant information instantly.
 
-This chatbot solves FinSolve's data access problem using:
+This project implements an internal AI chatbot using **Retrieval Augmented Generation (RAG)** and **Role-Based Access Control (RBAC)**. It ensures that each user receives accurate, secure, and role-relevant information instantly.
+
+Key features:
 - 🧠 **RAG (Retrieval-Augmented Generation)** via LLaMA 3 (Ollama)
 - 🔐 **Role-Based Filtering** at the vector search level
-- ⚡ **FastAPI + Streamlit** for interactive chat and login
+- ⚡ **FastAPI + Streamlit** for backend and frontend
 - 🧾 **Documents** stored per department with metadata
 
 ---
@@ -25,7 +26,7 @@ This chatbot solves FinSolve's data access problem using:
 
 | Role               | Permissions                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
-| C-Level Executives | Full unrestricted access to all documents                                   |
+| C-Level Executives | Full access to all documents                                                |
 | Finance Team       | Financial reports, expenses, reimbursements                                 |
 | Marketing Team     | Campaign performance, customer insights, sales data                         |
 | HR Team            | Employee handbook, attendance, leave, payroll                               |
@@ -44,14 +45,13 @@ This chatbot solves FinSolve's data access problem using:
 - Built with **Streamlit**
 - Login panel with session persistence
 - Typing animation + Chat history
-- 👍👎 feedback buttons
+- Feedback buttons (👍 / 👎)
 - Role access transparency shown in every response
 
 ### 🔎 Context-Aware Retrieval
 - Vector DB powered by **Chroma**
 - Embeds `.md` files per department with metadata (`role`, `category`)
 - Queries run through vector similarity → LLM → Answer
-
 
 ---
 
@@ -72,12 +72,12 @@ This chatbot solves FinSolve's data access problem using:
 
 | Username | Password     | Role              |
 |----------|--------------|-------------------|
-| Alice    | ceopass      | c-levelexecutives |
-| Bob      | employeepass | employee          |
-| Tony     | password123  | engineering       |
-| Bruce    | securepass   | marketing         |
-| Sam      | financepass  | finance           |
-| Natasha  | hrpass123    | hr                |
+| user1    | pass123      | c-levelexecutives |
+| user2    | pass123      | employee          |
+| user3    | pass123      | engineering       |
+| user4    | pass123      | marketing         |
+| user5    | pass123      | finance           |
+| user6    | pass123      | hr                |
 
 ---
 
@@ -149,7 +149,7 @@ DS-RPC-01/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/sakshcc/role_based_aichatbot
+git clone https://github.com/vardhanthadala/role_based_aichatbot
 cd role-based-chatbot
 ```
 
@@ -165,15 +165,14 @@ python -m venv venv
 Activate the virtual environment:
 
 ```bash
-venv\Scripts\activate     # On Windows
-# OR
-source venv/bin/activate  # On Mac/Linux
+venv\Scripts\activate     
+
 ````
 
 Install the dependencies:
 
 ```bash
-pip install -r ../requirements.txt
+pip install -r requirements.txt
 ```
 
 In a new terminal, start the LLaMA 3 model using Ollama:
@@ -182,7 +181,7 @@ In a new terminal, start the LLaMA 3 model using Ollama:
 ollama run llama3
 ```
 📝 Keep this terminal open — it runs the local LLM engine.
-The first run will download the model (~3–4 GB).
+The first run will download the model (Nearly 3–4 GB).
 
 Go back to the backend terminal and start the FastAPI server:
 
@@ -194,7 +193,7 @@ uvicorn main:app --reload
 In another new terminal:
 
 ```bash
-cd frontend
+cd app
 streamlit run frontend.py
 ```
 🔗 Visit: http://localhost:8501
