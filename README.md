@@ -237,7 +237,7 @@ Stores them in ChromaDB with role-based metadata
   ```python
   response = ollama.chat(model="llama3", messages=...)
   ```
-  Replace `"llama3"` with another Ollama-supported model (like `"mistral"`, `"codellama"`, etc.).
+  Replace `"llama3"` with another Ollama-supported model (like `"mistral"`, `"codellama"`, etc.). 
 
 ---
 
@@ -246,3 +246,4 @@ Stores them in ChromaDB with role-based metadata
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
+ 
